@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WearYourVibe - Premium Custom T-Shirts</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        header {
+            padding: 20px;
+            background: #000000;
+            color: #ffffff;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .hero {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 20px;
+            color: #555;
+        }
+        .shop-now {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            background: #000000;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .shop-now:hover {
+            background: #333333;
+        }
+        footer {
+            padding: 20px;
+            background: #000000;
+            color: #ffffff;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>WearYourVibe</header>
+    <div class="hero">
+        <h1>Express Yourself with Custom Tees</h1>
+        <p>Premium designs that match your vibe. Wear it, Own it.</p>
+        <a href="#shop" class="shop-now">Shop Now</a>
+    </div>
+    <footer>
+        &copy; 2025 WearYourVibe. All rights reserved.
+    </footer>
+</body>
+</html>
