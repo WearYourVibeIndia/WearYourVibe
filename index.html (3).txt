@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WearYourVibe</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    header {
+      background-color: #000;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #333;
+    }
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      text-align: center;
+    }
+    nav a:hover {
+      background-color: #575757;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .product {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 15px;
+      text-align: center;
+    }
+    .product img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    .btn {
+      margin-top: 10px;
+      background-color: #000;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn:hover {
+      background-color: #333;
+    }
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>WearYourVibe</h1>
+    <p>It's time to shine</p>
+  </header>
+  <nav>
+    <a href="#motivational">Motivational</a>
+    <a href="#funny">Funny</a>
+    <a href="#anime">Anime</a>
+    <a href="#trending">Trending</a>
+    <a href="#custom">Custom</a>
+  </nav>
+
+  <section id="motivational">
+    <h2 style="text-align:center; padding-top: 20px;">Motivational</h2>
+    <div class="gallery">
+      <div class="product">
+        <img src="images/motivational/mountains-dont-bow.jpg" alt="Mountains bow to those who refuse to quit">
+        <h3>Mountains Don't Bow</h3>
+        <p>Price: ₹0 (To be updated)</p>
+        <a class="btn" href="#">Order Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- More categories can be filled the same way later -->
+
+  <a class="whatsapp-button" href="https://wa.me/9330739752?text=Hi%2C%20I%20need%20help%20with%20my%20order%20on%20WearYourVibe!" target="_blank">
+    💬 WhatsApp Support
+  </a>
+</body>
+</html>
