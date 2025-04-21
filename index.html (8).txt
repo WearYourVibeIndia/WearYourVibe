@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WearYourVibe</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+    }
+    header {
+      background: #222;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+    }
+    h2 {
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 0.5rem;
+    }
+    .tagline {
+      font-size: 1rem;
+      color: #bbb;
+    }
+    .category {
+      padding: 2rem;
+    }
+    .images {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+    .product {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 1rem;
+      text-align: center;
+    }
+    .product img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      object-fit: contain;
+    }
+    @media (max-width: 600px) {
+      .product img {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+      }
+    }
+    .btn-group {
+      margin-top: 0.5rem;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.4rem 1rem;
+      margin: 0.2rem;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: background 0.3s;
+    }
+    .buy {
+      background-color: #28a745;
+      color: white;
+    }
+    .buy:hover {
+      background-color: #218838;
+    }
+    .support {
+      background-color: #007bff;
+      color: white;
+    }
+    .support:hover {
+      background-color: #0069d9;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>WearYourVibe</h1>
+    <p class="tagline">Wear your attitude. Share your vibe.</p>
+  </header>
+
+  <section class="category" id="funny">
+    <h2>Funny</h2>
+    <div class="images">
+      <div class="product">
+        <img src="funny/sample1.jpg" alt="Funny 1" />
+        <div class="btn-group">
+          <a href="#" class="btn buy">Buy Now</a>
+          <a href="https://wa.me/91XXXXXXXXXX" class="btn support">Support</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="category" id="memes">
+    <h2>Memes</h2>
+    <div class="images">
+      <div class="product">
+        <img src="memes/sample1.jpg" alt="Meme 1" />
+        <div class="btn-group">
+          <a href="#" class="btn buy">Buy Now</a>
+          <a href="https://wa.me/91XXXXXXXXXX" class="btn support">Support</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="category" id="motivation">
+    <h2>Motivation</h2>
+    <div class="images">
+      <div class="product">
+        <img src="motivation/sample1.jpg" alt="Motivation 1" />
+        <div class="btn-group">
+          <a href="#" class="btn buy">Buy Now</a>
+          <a href="https://wa.me/9330739752" class="btn support">Support</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
