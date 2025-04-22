@@ -95,13 +95,24 @@
       overflow: auto;
       background-color: rgba(0,0,0,0.8);
     }
-    .modal-content {
-      margin: auto;
-      display: block;
-      width: 95vw;
-      height: auto;
-      max-height: 95vh;
-      border-radius: 12px;
+   .modal-content {
+  margin: auto;
+  display: block;
+  width: 90vw;
+  height: auto;
+  max-height: 80vh;
+  border-radius: 12px;
+  object-fit: contain;
+}
+
+@media (min-width: 768px) {
+  .modal-content {
+    width: auto;
+    max-width: 600px;
+    max-height: 80vh;
+  }
+}
+
     }
     .close {
       position: absolute;
