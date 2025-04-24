@@ -1,0 +1,292 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WearYourVibe</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding-bottom: 80px;
+      background: #f9f9f9;
+    }
+
+    header {
+      background: #222;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      color: #bbb;
+    }
+
+    nav {
+      background: #444;
+      padding: 0.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      background-color: #333;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #555;
+    }
+
+    .category {
+      padding: 2rem;
+    }
+
+    h2 {
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 0.5rem;
+    }
+
+    .images {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+
+    .product {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .product img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    .btn-group {
+      margin-top: 0.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.4rem 1rem;
+      margin: 0.2rem;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: background 0.3s;
+    }
+
+    .buy {
+      background-color: #28a745;
+      color: white;
+    }
+
+    .buy:hover {
+      background-color: #218838;
+    }
+
+    .preview {
+      background-color: #ffc107;
+      color: black;
+    }
+
+    .preview:hover {
+      background-color: #e0a800;
+    }
+
+    /* Floating WhatsApp Button */
+    .floating-support {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+    }
+
+    .floating-support a {
+      background-color: #25D366;
+      color: white;
+      padding: 12px 16px;
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 24px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .floating-support a:hover {
+      background-color: #20b954;
+    }
+
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      border-radius: 12px;
+      max-width: 95vw;
+      max-height: 90vh;
+      width: auto;
+      height: auto;
+    }
+
+    @media (min-width: 768px) {
+      .modal-content {
+        max-width: 60vw;
+        max-height: 80vh;
+      }
+    }
+
+    .close {
+      position: absolute;
+      top: 30px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* Hide preview button on PC */
+    @media screen and (min-width: 768px) {
+      .btn.preview {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>WearYourVibe</h1>
+    <p class="tagline">Wear your attitude. Share your vibe.</p>
+  </header>
+
+  <nav>
+    <a href="#all">All</a>
+    <a href="#funny">Funny</a>
+    <a href="#memes">Memes</a>
+    <a href="#motivation">Motivation</a>
+  </nav>
+
+  <!-- All Category -->
+  <section class="category" id="all">
+    <h2>All</h2>
+    <div class="images">
+      <div class="product">
+        <img src="funny/sample1.jpg" alt="Funny 1" />
+        <div class="btn-group">
+          <a href="#" class="btn preview" onclick="openModal('funny/sample1.jpg')">Have a look</a>
+          <a href="#" class="btn buy">Buy Now</a>
+        </div>
+      </div>
+      <div class="product">
+        <img src="memes/sample1.jpg" alt="Meme 1" />
+        <div class="btn-group">
+          <a href="#" class="btn preview" onclick="openModal('memes/sample1.jpg')">Have a look</a>
+          <a href="#" class="btn buy">Buy Now</a>
+        </div>
+      </div>
+      <div class="product">
+        <img src="motivation/sample1.jpg" alt="Motivation 1" />
+        <div class="btn-group">
+          <a href="#" class="btn preview" onclick="openModal('motivation/sample1.jpg')">Have a look</a>
+          <a href="#" class="btn buy">Buy Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Individual Categories -->
+  <section class="category" id="funny">
+    <h2>Funny</h2>
+    <div class="images">
+      <div class="product">
+        <img src="funny/sample1.jpg" alt="Funny 1" />
+        <div class="btn-group">
+          <a href="#" class="btn preview" onclick="openModal('funny/sample1.jpg')">Have a look</a>
+          <a href="#" class="btn buy">Buy Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="category" id="memes">
+    <h2>Memes</h2>
+    <div class="images">
+      <div class="product">
+        <img src="memes/sample1.jpg" alt="Meme 1" />
+        <div class="btn-group">
+          <a href="#" class="btn preview" onclick="openModal('memes/sample1.jpg')">Have a look</a>
+          <a href="#" class="btn buy">Buy Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="category" id="motivation">
+    <h2>Motivation</h2>
+    <div class="images">
+      <div class="product">
+        <img src="motivation/sample1.jpg" alt="Motivation 1" />
+        <div class="btn-group">
+          <a href="#" class="btn preview" onclick="openModal('motivation/sample1.jpg')">Have a look</a>
+          <a href="#" class="btn buy">Buy Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal Preview -->
+  <div id="modal" class="modal" onclick="closeModal()">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modal-img" />
+  </div>
+
+  <!-- Floating Support Button -->
+  <div class="floating-support">
+    <a href="https://wa.me/9330739752" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+
+  <script>
+    function openModal(src) {
+      const modal = document.getElementById("modal");
+      const modalImg = document.getElementById("modal-img");
+      modal.style.display = "block";
+      modalImg.src = src;
+    }
+
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+  </script>
+</body>
+</html>
