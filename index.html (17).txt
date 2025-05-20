@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WearYourVibe</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding-bottom: 80px;
+      background: #f3f4f6;
+      color: #1f2937;
+    }
+
+    header {
+      background: #1e3a8a;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav {
+      background: #2563eb;
+      padding: 0.75rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      background-color: #1d4ed8;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #3b82f6;
+    }
+
+    .category {
+      padding: 2rem;
+    }
+
+    h2 {
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 0.5rem;
+    }
+
+    .images {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .product {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .product img {
+      width: 100%;
+      height: auto;
+      border-radius: 0.75rem;
+    }
+
+    .btn-group {
+      margin-top: 0.75rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      margin: 0.25rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: background 0.3s;
+    }
+
+    .buy {
+      background-color: #10b981;
+      color: white;
+    }
+
+    .buy:hover {
+      background-color: #059669;
+    }
+
+    .zoom {
+      background-color: #f59e0b;
+      color: black;
+    }
+
+    .zoom:hover {
+      background-color: #d97706;
+    }
+
+    .floating-support {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .floating-support a {
+      background-color: #25D366;
+      color: white;
+      padding: 12px 16px;
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 24px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .support-text {
+      background: white;
+      color: black;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      border-radius: 12px;
+      max-width: 95vw;
+      max-height: 90vh;
+    }
+
+    .close {
+      position: absolute;
+      top: 30px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>WearYourVibe</h1>
+    <p class="tagline">Wear your attitude. Share your vibe.</p>
+  </header>
+
+  <nav>
+    <a href="#all">All</a>
+    <a href="#memes">Memes</a>
+    <a href="#funny">Funny</a>
+    <a href="#motivation">Motivation</a>
+  </nav>
+
+  <section class="category" id="all">
+    <h2>All</h2>
+    <div class="images" id="all-images"></div>
+  </section>
+
+  <section class="category" id="memes">
+    <h2>Memes</h2>
+    <div class="images" id="memes-images"></div>
+  </section>
+
+  <section class="category" id="funny">
+    <h2>Funny</h2>
+    <div class="images" id="funny-images"></div>
+  </section>
+
+  <section class="category" id="motivation">
+    <h2>Motivation</h2>
+    <div class="images" id="motivation-images"></div>
+  </section>
+
+  <div class="floating-support">
+    <span class="support-text">Need Help?</span>
+    <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener" title="Chat on WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+
+  <div id="modal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modal-img">
+  </div>
+
+  <script>
+    function openModal(src) {
+      document.getElementById("modal").style.display = "block";
+      document.getElementById("modal-img").src = src;
+    }
+
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+
+    function loadImages(category, count) {
+      const container = document.getElementById(`${category}-images`);
+      for (let i = 1; i <= count; i++) {
+        const imgPath = `${category}/${category}.${i}.jpg`;
+        const product = document.createElement("div");
+        product.className = "product";
+        product.innerHTML = `
+          <img src="${imgPath}" alt="${category} ${i}" onclick="openModal('${imgPath}')">
+          <div class="btn-group">
+            <a href="#" class="btn zoom" onclick="openModal('${imgPath}')">Zoom</a>
+            <a href="#" class="btn buy">Buy Now</a>
+          </div>
+        `;
+        container.appendChild(product);
+        if (category !== 'all') {
+          document.getElementById("all-images").appendChild(product.cloneNode(true));
+        }
+      }
+    }
+
+    ['memes', 'funny', 'motivation'].forEach(cat => loadImages(cat, 20));
+  </script>
+</body>
+</html>
